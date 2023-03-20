@@ -14,6 +14,13 @@ app.post('/users', function (req, res, next) {
     res.send(html);
 });
 
+app.get('/number1/:number1/number2/:number2', (req, res) => {
+    const one = parseInt(req.params.number1);
+    const two = parseInt(req.params.number2);
+    const sum = one + two;
+    res.send(`The sum of ${one} and ${two} is ${sum}`);
+  });
+
 app.listen(port,()=>{
     console.log("App listening to: "+port)
 })
